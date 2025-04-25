@@ -1,11 +1,11 @@
 
-# 🚗 Plaka Tespiti API (License Plate Detection API)
+# 🚗 License Plate Detection API
 
-Bu proje, YOLOv8 modeli kullanılarak eğitilmiş bir nesne tespiti sistemini FastAPI ile web servisi olarak sunar. Yüklenen görsellerde araç plakalarını tespit eder ve bounding box (kutu) bilgileri ile birlikte döner.
+This project presents an object detection system trained using the YOLOv8 model as a web service with FastAPI. It detects vehicle license plates in uploaded images and returns bounding box (box) information.
 
-## 📸 Örnek Kullanım
+## 📸 Example Usage
 
-API'ye bir görsel gönderdiğinizde JSON formatında şu şekilde bir çıktı alırsınız:
+When you send an image to the API, you will receive an output in JSON format like this:
 
 ```json
 {
@@ -21,37 +21,37 @@ API'ye bir görsel gönderdiğinizde JSON formatında şu şekilde bir çıktı 
 
 ---
 
-## 🔧 Kurulum
+## 🔧 Installation
 
-Aşağıdaki adımlarla projeyi yerel bilgisayarınızda çalıştırabilirsiniz:
+You can run the project on your local machine by following the steps below:
 
-### 1. Depoyu Klonlayın ve Ortamı Hazırlayın
+### 1. Clone the Repository and Set Up the Environment
 
 ```bash
 git clone https://github.com/rabia-senlik/plate-detection-api.git
 cd plate-detection-api
 python -m venv venv
-source venv/bin/activate  # Windows için: venv\Scripts\activate
+source venv/bin/activate  # For Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 2. Model Dosyasını Ekleyin
+### 2. Add the Model File
 
-`training/best.pt` dosyasını kendi eğittiğiniz YOLOv8 model dosyasıyla değiştirin. Model yolunu `model/plate_model.py` içinde kontrol edin.
+Replace the `training/best.pt` file with your own trained YOLOv8 model file. Check the model path in `model/plate_model.py`.
 
-### 3. API’yi Başlatın
+### 3. Start the API
 
 ```bash
 uvicorn main:app --reload --port 8002
 ```
 
-### 4. Swagger Arayüzü ile Test Edin
+### 4. Test with Swagger UI
 
-Tarayıcıdan [`http://127.0.0.1:8000/docs`](http://127.0.0.1:8000/docs) adresine giderek görsel yükleyip test edebilirsiniz.
+Visit [`http://127.0.0.1:8000/docs`](http://127.0.0.1:8000/docs) in your browser to upload images and test the API.
 
 ---
 
-## 🧠 Kullanılan Teknolojiler
+## 🧠 Technologies Used
 
 - Python  
 - FastAPI  
@@ -61,15 +61,15 @@ Tarayıcıdan [`http://127.0.0.1:8000/docs`](http://127.0.0.1:8000/docs) adresin
 
 ---
 
-## 💡 Geliştirme Planları
+## 💡 Development Plans
 
-- Tespit edilen plakaların görüntü üzerine çizilmesi  
-- OCR ile plaka metninin okunması  
-- Frontend arayüzü entegrasyonu
+- Drawing the detected license plates on the image  
+- Reading the license plate text with OCR  
+- Frontend interface integration
 
 ---
 
-## 👤 Geliştirici
+## 👤 Developer
 
-- **İsim:** Rabia Şenlik  
+- **Name:** Rabia Şenlik  
 - **GitHub:** [@rabia-senlik](https://github.com/rabia-senlik)
